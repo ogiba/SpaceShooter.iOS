@@ -17,6 +17,10 @@
 		7A016B7E20098E6600FFF504 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A016B7C20098E6600FFF504 /* LaunchScreen.storyboard */; };
 		7A016B8920098E6600FFF504 /* SpaceShooterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A016B8820098E6600FFF504 /* SpaceShooterTests.swift */; };
 		7A016B9420098E6600FFF504 /* SpaceShooterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A016B9320098E6600FFF504 /* SpaceShooterUITests.swift */; };
+		7A016BA22009928C00FFF504 /* GameElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A016BA12009928C00FFF504 /* GameElements.swift */; };
+		7A016BA52009932800FFF504 /* CollisionBitMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A016BA42009932800FFF504 /* CollisionBitMask.swift */; };
+		7A016BA72009948E00FFF504 /* GenericNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A016BA62009948E00FFF504 /* GenericNode.swift */; };
+		7A016BA92009952D00FFF504 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A016BA82009952D00FFF504 /* GameState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,10 @@
 		7A016B8F20098E6600FFF504 /* SpaceShooterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpaceShooterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A016B9320098E6600FFF504 /* SpaceShooterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceShooterUITests.swift; sourceTree = "<group>"; };
 		7A016B9520098E6600FFF504 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A016BA12009928C00FFF504 /* GameElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameElements.swift; sourceTree = "<group>"; };
+		7A016BA42009932800FFF504 /* CollisionBitMask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollisionBitMask.swift; sourceTree = "<group>"; };
+		7A016BA62009948E00FFF504 /* GenericNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericNode.swift; sourceTree = "<group>"; };
+		7A016BA82009952D00FFF504 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +111,7 @@
 		7A016B6C20098E6600FFF504 /* SpaceShooter */ = {
 			isa = PBXGroup;
 			children = (
+				7A016BA32009931100FFF504 /* Engine */,
 				7A016B6D20098E6600FFF504 /* AppDelegate.swift */,
 				7A016B6F20098E6600FFF504 /* GameScene.sks */,
 				7A016B7120098E6600FFF504 /* Actions.sks */,
@@ -112,6 +121,8 @@
 				7A016B7A20098E6600FFF504 /* Assets.xcassets */,
 				7A016B7C20098E6600FFF504 /* LaunchScreen.storyboard */,
 				7A016B7F20098E6600FFF504 /* Info.plist */,
+				7A016BA12009928C00FFF504 /* GameElements.swift */,
+				7A016BA82009952D00FFF504 /* GameState.swift */,
 			);
 			path = SpaceShooter;
 			sourceTree = "<group>";
@@ -132,6 +143,15 @@
 				7A016B9520098E6600FFF504 /* Info.plist */,
 			);
 			path = SpaceShooterUITests;
+			sourceTree = "<group>";
+		};
+		7A016BA32009931100FFF504 /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				7A016BA42009932800FFF504 /* CollisionBitMask.swift */,
+				7A016BA62009948E00FFF504 /* GenericNode.swift */,
+			);
+			path = Engine;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,9 +290,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A016BA92009952D00FFF504 /* GameState.swift in Sources */,
+				7A016BA22009928C00FFF504 /* GameElements.swift in Sources */,
+				7A016BA72009948E00FFF504 /* GenericNode.swift in Sources */,
 				7A016B7420098E6600FFF504 /* GameScene.swift in Sources */,
 				7A016B7620098E6600FFF504 /* GameViewController.swift in Sources */,
 				7A016B6E20098E6600FFF504 /* AppDelegate.swift in Sources */,
+				7A016BA52009932800FFF504 /* CollisionBitMask.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
