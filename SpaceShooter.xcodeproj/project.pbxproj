@@ -21,6 +21,8 @@
 		7A016BA52009932800FFF504 /* CollisionBitMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A016BA42009932800FFF504 /* CollisionBitMask.swift */; };
 		7A016BA72009948E00FFF504 /* GenericNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A016BA62009948E00FFF504 /* GenericNode.swift */; };
 		7A016BA92009952D00FFF504 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A016BA82009952D00FFF504 /* GameState.swift */; };
+		7A016BAC20099C4000FFF504 /* OpponentNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A016BAB20099C4000FFF504 /* OpponentNode.swift */; };
+		7A016BAE20099F2A00FFF504 /* ProjectileNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A016BAD20099F2A00FFF504 /* ProjectileNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		7A016BA42009932800FFF504 /* CollisionBitMask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollisionBitMask.swift; sourceTree = "<group>"; };
 		7A016BA62009948E00FFF504 /* GenericNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericNode.swift; sourceTree = "<group>"; };
 		7A016BA82009952D00FFF504 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
+		7A016BAB20099C4000FFF504 /* OpponentNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpponentNode.swift; sourceTree = "<group>"; };
+		7A016BAD20099F2A00FFF504 /* ProjectileNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectileNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,7 @@
 		7A016B6C20098E6600FFF504 /* SpaceShooter */ = {
 			isa = PBXGroup;
 			children = (
+				7A016BAA20099BCD00FFF504 /* Models */,
 				7A016BA32009931100FFF504 /* Engine */,
 				7A016B6D20098E6600FFF504 /* AppDelegate.swift */,
 				7A016B6F20098E6600FFF504 /* GameScene.sks */,
@@ -152,6 +157,15 @@
 				7A016BA62009948E00FFF504 /* GenericNode.swift */,
 			);
 			path = Engine;
+			sourceTree = "<group>";
+		};
+		7A016BAA20099BCD00FFF504 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7A016BAB20099C4000FFF504 /* OpponentNode.swift */,
+				7A016BAD20099F2A00FFF504 /* ProjectileNode.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,10 +306,12 @@
 			files = (
 				7A016BA92009952D00FFF504 /* GameState.swift in Sources */,
 				7A016BA22009928C00FFF504 /* GameElements.swift in Sources */,
+				7A016BAE20099F2A00FFF504 /* ProjectileNode.swift in Sources */,
 				7A016BA72009948E00FFF504 /* GenericNode.swift in Sources */,
 				7A016B7420098E6600FFF504 /* GameScene.swift in Sources */,
 				7A016B7620098E6600FFF504 /* GameViewController.swift in Sources */,
 				7A016B6E20098E6600FFF504 /* AppDelegate.swift in Sources */,
+				7A016BAC20099C4000FFF504 /* OpponentNode.swift in Sources */,
 				7A016BA52009932800FFF504 /* CollisionBitMask.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

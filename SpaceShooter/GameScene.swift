@@ -9,7 +9,7 @@
 import SpriteKit
 import GameplayKit
 
-class GameScene: SKScene {
+class GameScene: SKScene, SKPhysicsContactDelegate {
     public var scaleFactor: CGFloat?
     
     fileprivate var backgroud: SKNode?
@@ -30,6 +30,31 @@ class GameScene: SKScene {
         
         setupEnviroment()
         setupPlayer()
+        
+//        physicsWorld.gravity = CGVector(dx: 0, dy: -2)
+        physicsWorld.contactDelegate = self
+    }
+    
+    func didBegin(_ contact: SKPhysicsContact) {
+        guard let _player = player else {
+            return
+        }
+        
+        var otherNode: SKNode?
+        
+        if contact.bodyA.node != _player {
+            otherNode = contact.bodyA.node
+        } else {
+            otherNode = contact.bodyB.node
+        }
+        
+        if let _collisioned = (otherNode as? OpponentNode)?.collision(withPlayer: _player), _collisioned {
+            print("Collisioned with opponent")
+        } else if let _collisioned = (otherNode as? GenericNode)?.collision(withPlayer: _player), _collisioned{
+            print("Collisioned with generic node")
+        } else {
+            print("Not collision detected")
+        }
     }
     
     override func didMove(to view: SKView) {
