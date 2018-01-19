@@ -67,7 +67,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func touchMoved(toPoint pos : CGPoint) {
-        
+        UIView.animate(withDuration: 500, animations: {[weak self]() -> Void in
+            guard let _player = self?.player else {
+                return
+            }
+            
+            let newPosition = pos.x - _player.position.x
+    
+            _player.position.x += newPosition
+        })
     }
     
     func touchUp(atPoint pos : CGPoint) {
