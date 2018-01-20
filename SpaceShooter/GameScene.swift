@@ -74,10 +74,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 return
             }
 
-            let translation = pos.x - _player.position.x
-
-            if pos.x < _size.width, pos.x > 0 {
-                _player.position.x += translation
+            let newXPosition = _player.position.x + (pos.x - _player.position.x)
+            let newYPosition = _player.position.y + (pos.y - _player.position.y)
+            
+            print("New position for ship: \(CGPoint(x: newXPosition,y: newYPosition))")
+            
+            if pos.x >= 30, pos.x <= _size.width - 30 {
+                _player.position.x = newXPosition
+            }
+            
+            if pos.y >= 30, pos.y <= _size.height / 2 {
+                _player.position.y = newYPosition
             }
         })
     
