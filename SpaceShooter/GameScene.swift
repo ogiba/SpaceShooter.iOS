@@ -67,19 +67,24 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func touchMoved(toPoint pos : CGPoint) {
-        UIView.animate(withDuration: 500, animations: {[weak self]() -> Void in
-            guard let _player = self?.player else {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {[weak self]() -> Void in
+            guard
+                let _player = self?.player,
+                let _size = self?.size else {
                 return
             }
-            
-            let newPosition = pos.x - _player.position.x
-    
-            _player.position.x += newPosition
+
+            let translation = pos.x - _player.position.x
+
+            if pos.x < _size.width, pos.x > 0 {
+                _player.position.x += translation
+            }
         })
+    
     }
     
     func touchUp(atPoint pos : CGPoint) {
-        
+    
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
