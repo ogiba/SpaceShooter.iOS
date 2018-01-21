@@ -16,6 +16,14 @@ class Player: SKNode {
             sprite?.size = CGSize(width: spriteSize.width, height: spriteSize.height / 10)
         }
     }
+    
+    public var size: CGSize {
+        get {
+            return spriteSize
+        }
+    }
+    
+    public var newPosition: CGPoint?
 
     
     required init?(coder aDecoder: NSCoder) {
@@ -27,11 +35,13 @@ class Player: SKNode {
         
 //        self.position = CGPoint(x: self.size.width / 2.0, y: 100)
         
-        
         prepareSprite()
         preparePhysicsBody()
     }
-    
+}
+
+//MARK: Preparing player node
+extension Player {
     fileprivate func prepareSprite() {
         //        let sprite = SKSpriteNode(imageNamed: "player")
         sprite = SKSpriteNode(color: SKColor.red, size: spriteSize)
@@ -61,5 +71,15 @@ class Player: SKNode {
         
         self.physicsBody?.collisionBitMask = 0
         self.physicsBody?.contactTestBitMask = CollisionBitMask.projectile | CollisionBitMask.player
+    }
+}
+
+extension Player {
+    public func move() {
+        guard let _newPosition = newPosition else {
+            return
+        }
+        
+        self.position = _newPosition
     }
 }

@@ -68,9 +68,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func touchMoved(toPoint pos : CGPoint) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {[weak self]() -> Void in
-            guard
-                let _player = self?.player,
-                let _size = self?.size else {
+            guard let _player = self?.player else {
                 return
             }
 
@@ -79,13 +77,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             print("New position for ship: \(CGPoint(x: newXPosition,y: newYPosition))")
             
-            if pos.x >= _player.spriteSize.width, pos.x <= _size.width - _player.spriteSize.width {
-                _player.position.x = newXPosition
-            }
-            
-            if pos.y >= _player.spriteSize.height, pos.y <= _size.height / 2 {
-                _player.position.y = newYPosition
-            }
+            _player.newPosition = CGPoint(x: newXPosition, y: newYPosition)
         })
     
     }
@@ -113,6 +105,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
+        
+        if let _player = player,
+            let _newPosition = _player.newPosition  {
+            
+            let playerSize = _player.size
+            
+            if _newPosition.y > playerSize.height, _newPosition.y < size.height * 3 / 4,
+                _newPosition.x > playerSize.width , _newPosition.x < size.width - playerSize.width {
+                player?.move()
+            }
+        }
     }
     
     func setupPlayer() {
